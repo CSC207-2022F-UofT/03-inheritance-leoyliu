@@ -96,7 +96,6 @@ public abstract class Bag {
     }
 
 
-
     /**
      * TODO: Create a method called popItem that returns a String.
      *       The string should be the last item added to this Bag
@@ -128,6 +127,14 @@ public abstract class Bag {
     public void increaseCapacity(int n) {
         // TODO: Implement this method.
         this.capacity += n;
+
+        String[] newContents = new String[this.capacity];
+
+        for (int i = 0; i < this.contents.length; i++) {
+            newContents[i] = this.contents[i];
+        }
+
+        this.contents = newContents.clone();
     }
 
     /**
